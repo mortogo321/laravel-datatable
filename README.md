@@ -9,7 +9,11 @@ touch database/database.sqlite
 cp .env.example .env
 composer install --no-cache
 php artisan key:generate
+php artisan migrate
+php artisan tinker
+>>> User::factory(100)->create()
+>>> exit
 php artisan serve
 ```
 
-http://localhost:8000
+http://localhost:8000/users
