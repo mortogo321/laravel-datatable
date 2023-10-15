@@ -5,12 +5,12 @@
         <div class="card">
             <div class="card-header">Manage Users</div>
             <div class="card-body">
-                {{ $dataTable->table() }}
+                {{ $html->table() }}
             </div>
         </div>
     </div>
 @endsection
 
 @push('scripts')
-    {{ $dataTable->scripts() }}
+    {{ $html->scripts() }}
 @endpush
