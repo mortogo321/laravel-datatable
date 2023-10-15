@@ -5,14 +5,18 @@
 
 ## Development
 ```bash
-touch database/database.sqlite
 cp .env.example .env
 composer install --no-cache
 php artisan key:generate
+
 php artisan migrate
+
 php artisan tinker
 >>> User::factory(100)->create()
 >>> exit
+
+yarn
+
 php artisan serve
 ```
 
