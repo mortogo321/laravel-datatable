@@ -1,23 +1,40 @@
-# Laravel Datatable
-- [Laravel](https://laravel.com)
-- [Laravel DataTables](https://yajrabox.com/docs/laravel-datatables)
-- SQLite
+# Laravel Server-Side DataTables
 
-## Development
+Demonstrates server-side processing with Yajra Laravel DataTables — a paginated, searchable, sortable users table backed by an Eloquent query instead of a client-side dataset.
+
+## What's inside
+
+- A `/users` DataTable with search, sort, and pagination handled server-side (`yajra/laravel-datatables`, `yajra/laravel-datatables-html`)
+- A formatted "Created" column rendered client-side with dayjs
+- Laravel's built-in auth scaffolding (login, registration, password reset) via Laravel UI
+- Sanctum installed for token-based API auth (default `/api/user` route)
+
+## Tech stack
+
+- Laravel (PHP)
+- Yajra Laravel DataTables
+- Laravel Sanctum, Laravel UI
+- Vite, Bootstrap, Sass, dayjs, axios
+- SQLite (default database connection)
+
+## Quickstart
+
 ```bash
+composer install
 cp .env.example .env
-composer install --no-cache
 php artisan key:generate
 
+touch database/database.sqlite
 php artisan migrate
 
 php artisan tinker
->>> User::factory(100)->create()
+>>> App\Models\User::factory(100)->create()
 >>> exit
 
-yarn
+npm install
+npm run dev        # or `npm run build` for production assets
 
 php artisan serve
 ```
 
-http://localhost:8000/users
+Visit `http://localhost:8000/users` to see the datatable.
